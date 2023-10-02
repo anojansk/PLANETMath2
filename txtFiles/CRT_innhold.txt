@@ -1,0 +1,78 @@
+Chinese Remainder Theorem 
+
+In this chapter we will take a look at the Chinese Remainder Theorem. 
+
+Given positive integers n1,..,nk, we have gcd(ni,nj) = 1 for i=/=j. This gives ut the linear system: 
+
+	x ≡ a1 (mod n1)
+	x ≡ a2 (mod n2)
+		.
+		.
+		.
+	x ≡ ak (mod nk)
+
+This system have a solution that is unique solution for x modulo N (where N = n1 x n2 x ... x nk).
+
+ 
+This is a way to solve a system of linear congruences. Firstly, find if gcd between all n1,...,nk are 1, when this is shown, CRT can be used. Start by rewrite each linear congruence of the form ax ≡ b (mod m) (a > 1) to x ≡ b' (mod m). Then find N1,N2,...Nk, where N1 = N/n1, N2 = N/n2,...., Nk = N/nk (Remember that N = N = n1 x n2 x ... x nk). Each Nk is in other words the product of all the integers ni, but the factor nk is removed. This means that gcd(Nk, nk) = 1 (because all the ni's are relatively prime to eachother, this is shown when we check the condition of gcd(ni,nj) = 1 for i=/=j before using CRT). 
+Then the solution to the system is:
+X = a1N1x1 + a2N2x2 + ... + akNkxk. 
+Where each xi for i = 1,...,k is the solution for Nkxi ≡ 1 (mod nk).
+In words, xi is the solution for the linear congruence ak (from the original system) modulo Nk
+
+Here is an example: 
+
+	10x ≡ 2 (mod 3)
+	14x ≡ 3 (mod 5)
+	23x ≡ 6 (mod 7)
+
+Firstly, we need to check the condition to use the CRT, that is, if gcd(3,5) = gcd(5,7) = gcd(3,7) = 1. 
+This is true, hence we can use the CRT. 
+Now the terms have to be rewritten such that ax ≡ b (mod m) --> x ≡ b' (mod m) 
+
+	10x ≡ 2 (mod 3) -->  x ≡ 2 (mod 3)
+	14x ≡ 3 (mod 5) -->  x ≡ 2 (mod 5)
+	23x ≡ 6 (mod 7) -->  x ≡ 3 (mod 7)
+
+Now we need to find our Ni's. To do this we find n. 
+n = n1 x n2 x n3 = 3 x 5 x 7 = 105
+
+This gives us,
+
+N1 = n/n1 = 105/3 = 35
+N2 = n/n2 = 105/5 = 21
+N3 = n/n3 = 105/7 = 15
+
+Further we use the Ni's to find x1, x2 and x3. 
+
+35x1 ≡ 1 (mod 3)
+21x2 ≡ 1 (mod 5)
+15x3 ≡ 1 (mod 7)
+
+Answer for these three linear congruences are x1 = 2, x2 = 1, x3 = 1. 
+
+Lastly we use the formula above to find X. 
+
+X = a1N1x1 + a2N2x2 + ... + akNkxk. 
+
+X = 2*35*2 + 2*21*1 + 3*15*1 = 227,
+
+take the answer modulo 105 and we get the solution
+
+X = 269 ≡ 59 (mod 105). 
+
+What this tells us is that the system that we started with, has a solution X that satisfies all the linear congruences. This can be easily checked:
+
+
+	10 * 17 = 170 ≡ 2 (mod 3)
+	14 * 17 = 238 ≡ 3 (mod 5)
+	23 * 17 = 391 ≡ 6 (mod 7)
+
+
+TEST YOURSELF
+
+LAG EN OPPGAVE MED 3 FELT SOM MAN KAN SKRIVE INN I, OG FÅ JS TIL Å SJEKKE OM TALLENE STEMMER, DERSOM IKKE KAN MAN SE LØSNING. 
+
+
+
+

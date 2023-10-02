@@ -1,0 +1,7 @@
+<MenuNavBar>
+        {
+             list.map((topic) =>{
+                <MenuTopic>topic</MenuTopic>
+            })
+        }
+        </MenuNavBar>

@@ -1,0 +1,20 @@
+
+    const [BackgroundColor, setBackgroundColor] = React.useState(false)
+    
+    function handleClick(){
+        setBackgroundColor(prevState => !prevState)
+      }
+    
+      const styles = {
+         backgroundColor : BackgroundColor ? "222222" : "cccccc",
+         color : BackgroundColor ? "white" : "black"  
+      }
+
+
+
+       <div onClick={handleClick}>{BackgroundColor ? <BsToggleOn /> : <BsToggleOff />}</div>
+
+
+
+       <Button >Hint</Button>
+            <Button >Solution</Button>

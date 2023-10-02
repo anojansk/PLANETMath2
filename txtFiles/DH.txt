@@ -1,0 +1,78 @@
+In this section we will take a look at the Diffie-Hellman protocol. 
+
+
+
+The Diffie-Hellman (DH) protocol is a cyptographic protocol that allows Alice and Bob generate a shared value. 
+
+
+Cyclic group: 
+
+We define a cyclic group as following: 
+w
+    A group G is cyclic if \\ThereExists an elemeng g \element G such that G = {g^n | n \element \\Z}
+
+    What this means is that we can generate the group G by finding integers a \element \\Z and use a as exponent to make all elements in G. 
+    and we use elements g in G to do so. Here is an example: 
+
+    
+
+We will first read through the protocol informaly and then introduce the necessary formulas and calculations. 
+
+The protocol intention is so that Alice can send Bob a encrypted message using Symmetric Cryptography. 
+In Symmetric Cryptography the two parts included need a shared key they can use to encrypt/decrypt the message. Therefore the 
+DH-protocol is used to generate this shared key. 
+
+Informally: 
+
+1. Alice wants to send Bob a message. She chooses a number uniformly random from a set and use exponents to get a new value. 
+2. Alice sends this value to Bob. Now Bob does the same, he chooses a number uniformly random from the same set
+ (the numbers chosen from A and B does not have to be the same.) and also uses exponents to get a new value. 
+ Bob calculates the common key, while sending his value to Alice.
+3. Alice uses the recived value and also calculates the common key. They will now carry a key that are the same and 
+an eavesdropper Eve cannot get this key, using the information that Alice and Bob shared with eachother. 
+
+
+Now lets look at this with more calucations: 
+Pre information: let G is a cyclic group and let g be a generator of the group. Both Alice and Bob knows G and g. 
+
+1. Alice wants to send a message m_A to Bob. Alice now chooses uniformly random a number r_A from the set r_A \\leftarrow {0, 1, \\ldots , n-1} 
+The new value k_A = g^{r_A}. 
+
+2. Bob recives k_A. First he chooses a number r_B (as Alice) uniformly random: r_B \\leftarrow {0, 1, \\ldots , n-1}
+His new value k_B = g^{r_B}. Where g is the same in both Alice and Bob's case. He sends k_B to Alice.
+But also, he calculates the shared key, which is S_B = k_A^{r_b}
+
+3. Alice recives k_B and also calculates the shared key, which will be S_A = k_B^{r_a}
+
+4. Now that Alice and Bob have the same key (S_A = S_B)
+
+Before going to an example, two question might occur.
+1. How do we know that that the shared key is the same? That is, is S_A = S_B?
+2. Why cant Eve use the information k_A and k_B to also find the shared key?
+
+To answer the first one, we use som basic algebra. 
+S_A = (k_A^{r_B}) = (g^{r_A})^{r_B} = (g^{r_B})^{r_A} = k_B^{r_A} = S_B,
+This shows that both S_A and S_B are indeed the same. 
+
+Why cant eve use the information she recieved to find S_A (or S_B)?
+The only information Eve has seen is K_A and K_B, where,
+K_A = (g^{r_A}) and K_B = (g^{r_B}), Eves interest is to find either r_A or r_B
+with either of these she can find the shared key, however with only K_A and K_B it very difficult.
+ (Forklar kort eller henvis til log hard.)
+
+
+Now, lets look at an example:
+
+Let us use $Z_7$
+
+
+
+  <div className={`LinkElements LinkElements-${cN}`}>
+        <Link to="/OV" className="Cryptography">Cryptography</Link>
+        <Link to="/RSA" className="About">RSA</Link>
+        <Link to="/FLT" className="About">Number Theory</Link>
+        <Link to="/CRT" className="About">Linear Algebra</Link>
+        <Link to="/ET" className="About">ET</Link>
+        <Link to="/EPF" className="About">EPF</Link>
+        <Link to="/moretasks" className= "Moretasks">More Tasks</Link>
+         </div>

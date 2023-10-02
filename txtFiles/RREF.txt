@@ -1,0 +1,61 @@
+Earlier in elementary/high school you may have learned to solve linear equations with two variables. Often these varaibles were x and y, and you were given two equations. In this section we will learn how to solve a system of linear equations. Where there are more than two variables and equations. To solve such systems, we tend to use matrices. By reducing the matrix to reduced row echelon form (RREF) (bold), we find the values for the different variables. 
+
+There are three major rules to follow when manipulating a matrix. 
+
+1) You can multiply any row with a constant.
+2) You can switch rows.
+3) 
+
+
+1) 
+Given the matrix ..., we are allowed to multiply any row with any constant. For instance, we can multiply the first row with 1/3. 
+
+2)
+Given the same matrix from 1) We can swtich the first and the second row. 
+
+3)
+
+Now, with these rules we can introduce RREF. For us to reduce a matrix to RREF, we want each row to have only one 1, and the rest 0. And for each row, the position of the 1, must be on the right side of the previous row. 
+Here is an example of a matrix that is in RREF.
+
+Here is two examples of matrices that are not in RREF. 
+
+When we solve system of linear equations we want to write the system as a matrix by appending the coefficient in the matrix and after that we want to reduce the matrix to RREF. By doing this we find the values of the different varaibles. 
+
+Lets look at an example: 
+
+
+x1 = 2
+x2 = -3
+x3 = 1
+x4 = 0
+
+
+Let us have the system of linear equations as follows:
+x1 + 2x2 - 5x3 = -9
+3x1 + 8x3 + x4 = 14
+2x1 + x2 + x3 + 5x4 = 0
+4x2 + 8x4 = -12
+
+Lag en matrise vis hvordan man regner
+
+There are mainly three "solutions" for every system of linear equations. Either there is exactly one solution, as we showed above, else there are infinetly many solutions or no solutions. 
+That means, solving system of linear equations, by reducing a matrix representing the equations to RREF, will determine what the result is.
+
+If we have no solution, there often is a row that will contain all zeros and that will equal a number. 
+For instance:
+
+0 0 0 0 1 -> This means 0x1 + 0x2 + 0x3 + 0x4 = 1, but that is not possible -> 0 =/= 1.. 
+
+Hence getting a row that looks like that indicates that the systems has no solutions. 
+
+If there are infinite solutions, one or more rows will tend to look like this: 
+ 
+0 0 0 0 0 -> This means 0x1 + 0x2 + 0x3 + 0x4 = 0, which again means we assign a varaible to one of the x's (normally the row number), we will look at an example below: 
+
+Bruk et eksempel fra en bok.. 
+
+
+Here are two qestions to test yourself. 
+
+

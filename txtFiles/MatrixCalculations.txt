@@ -1,0 +1,42 @@
+In this section we will take a look at a few ways to do matrix calculations. The ones we will look at are: Addition/Subtraction and Multiplication. 
+
+
+Addition/Subtraction: 
+
+When Adding two matrices they have to be the same size that is; we can only add a nxn matrix to another nxn matrix. 
+for instance: 3x3 + 3x3 is ok, 4x4 + 5x5 is not ok. 
+Once we see that the size is the same, we add the element at place ij (where i is the row number and j is the column number) 
+This same goes for subtraction. However remember that subtraction is not commutative. That is given matrix M and N, 
+M - N =/= N - M, yet addition is (M + N = N + M). 
+
+Here are a few examples: 
+
+Ta frem et eksemepel med + og et med minus. 
+
+Multiplication
+For the explanation below assume the following:
+Matrix M, N are both of size axa. 
+Matrix O has size bxc
+Matrix P has sie cxd
+
+
+Multiplication between matrices of same size: 
+Above we saw that adding two matrices together, all we had to do was to add the numbers on 
+position ij together, where 1<=i,j<=a. That is, let a = 4, 
+The value of position 1,4 in the matrix M+N, will be the value of the position 1,4 in M added to the value of the position 1,4 in N. 
+
+However, when we multply a matrix of the same size, we don't do it this way. If we want to find M*N (again assuming M,N is a 4x4 matrix), the value in position ij (assume 1,4 again), will be the dot product between the row 1 in M and column 4 in N. This is shown below. 
+
+
+
+
+
+
+Multiplication between matrices of different size: 
+
+
+
+Multiplication of two or more matrices is different from addition/subtraction. 
+When we do the addition operation between two matrices the matrices need to be the same size. 
+However, for matrix multiplication that is not neccesary the case. Given matrices M and N, where M is 
+	

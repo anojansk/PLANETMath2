@@ -1,0 +1,1 @@
+In this section we are going to look at the EL Gamal protocol. 

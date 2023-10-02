@@ -1,0 +1,459 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+html, body {
+  z-index: 1;
+  text-align: center;
+
+}
+
+/** -------------------------------------------------------
+                    HEADER AND NAVBAR
+  ------------------------------------------------------- */
+
+
+header {
+  height: 90px;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.LinkElements{
+  position: absolute;
+  right: 10;
+  bottom : 30;
+}
+
+.LinkElements > a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.LinkElements > a:hover{
+  color : red;
+}
+
+.LinkElements-dark {
+  color: yellow;
+}
+
+
+.LinkElements-light > a{
+  color: brown;
+}
+
+
+.Toggle{
+  position: absolute;
+  right: 10;
+}
+
+
+.Home{
+  text-decoration: none;
+  position: absolute;
+  left: 10;
+  bottom : 30;
+  color: Brown;
+}
+
+/** -------------------------------------------------------
+                  MenuStyling (Navbar)
+  ------------------------------------------------------- */
+
+
+  .MenuNavBar{
+     position: absolute;
+     right: 30px;
+     display: flex;
+     margin-top: 25px;
+
+  }
+
+  .MenuTopic{
+      color:blue;
+      margin: 0 10px;  
+      position: relative;
+
+      
+  }
+
+  .MenuTopic.Cryptography{
+      color : black;
+  }
+
+
+  .MenuTopic:hover{
+      color:red;
+  }
+
+  .MenuDropDown{
+      position: absolute;
+      background-color:white;
+      max-height:300px;
+      margin: 20px 0px;
+      padding: 30px 30px 30px 40px;
+      border-radius: 10px;
+      z-index: 2;
+      
+      
+  }
+
+  
+/**   .MenuDropDown.MDDLinearAlgebra{
+      background-color: red;
+      margin-left: 150px;
+      width: 50px;
+      text-align: center;
+  }
+
+  .MenuDropDown.MDDCryptography{
+      background-color: GREEN;
+      margin-left: 0px;
+      width: 150px;
+      text-align: center;
+
+  }
+
+  .MenuDropDown.MDDNumberTheory{
+      margin-left: 270px;
+      width: 150px;
+      text-align: center;
+
+  }
+
+  .MenuDropDown.MDDStatistics{
+      margin-left: 400px;
+      width: 40px; 
+      text-align: center;
+
+  } */
+
+
+
+  .Test:hover{
+      color:blue;
+  }
+
+
+  .MenuLinks{
+      padding: 10px;
+  }
+
+
+
+
+
+/** -------------------------------------------------------
+                          Main
+  ------------------------------------------------------- */
+
+  
+
+
+
+  
+
+
+
+/** -------------------------------------------------------
+      TEST YOUR SELF MINI COMPONENT & CHILD COMPONENTS
+  ------------------------------------------------------- */
+
+
+button{
+
+       
+       
+  background-color:#C9AD7F;
+  color :#F6F7DD;  
+  font-weight: bold; 
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+
+
+
+input {
+  background-color: white;
+  color: red;
+  max-width: 300px;
+  
+}
+
+input ::placeholder{
+  color: red;
+  opacity: 1;
+}
+
+.TestYourSelfMiniComp{
+  display: flex;
+  justify-content: space-around;
+ 
+
+}
+
+.inpAns_Comp{
+  position: inherit;
+  vertical-align: middle;
+}
+
+
+.HintSol_Comp > button {
+ margin: 0 10px;
+}
+
+.showHS{
+  height: 200px;
+  width: 200px;
+
+}
+
+
+img {
+  max-width: 200px;
+  border-radius: 10px;
+  max-height: 200px;
+/**Hvorfor skakker det når f.eks. max-height er 300px?*/
+}
+
+
+
+
+.Question_Button{
+  position: inherit;
+  justify-content: center;
+
+}
+
+.QuestionFromButton{
+
+  position: relative;
+  width: 200px;
+  height:200px;
+
+}
+
+
+
+
+/** -------------------------------------------------------
+                          FOOTER
+  ------------------------------------------------------- */
+
+
+  footer {
+      height: 90px;
+      display: flex;
+      padding: 15px;
+      position: relative;
+  }
+
+  .LinkInFooter{
+      position: absolute;
+      right: 10;
+      bottom : 30;
+  }
+
+  .LinkInFooter.dark > a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: brown
+  }
+
+
+
+
+
+ 
+
+/** -------------------------------------------------------
+                  MENU COMPONENTS & CO
+  ------------------------------------------------------- */
+
+
+
+
+/** -------------------------------------------------------
+                  FEEDBACK PAGE
+  ------------------------------------------------------- */
+
+  .column{
+      float: left;
+      width: 50%;
+  }
+
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+
+
+    /** -------------------------------------------------------
+                  Dark and Light modes
+  ------------------------------------------------------- */
+  header.dark, footer.dark {
+      text-decoration: none;
+      background-color: rgb(9, 9, 9);
+      color: white;
+  }
+  
+
+  button.dark {
+      background-color: darkgrey;
+      color : black;   
+      border-radius: 10px;
+      font-size: 15px;
+      padding: 5px 10px;
+  }
+  
+  main.dark {
+  
+      text-decoration: none;
+      background-color: #171716;
+      color: white;
+      padding: 0 15px;
+
+
+  }
+
+  .DropDownMenus.dark{
+      background-color : #c7bda3;
+       border-radius : 10px;
+       position : absolute;
+  }
+
+
+  header.light, footer.light{
+      text-decoration: none;
+      background-color: #DECFAC;
+      color: brown;
+  }
+  
+
+  main.light{
+      text-decoration: none;
+      background-color: #fff7ed;
+      padding: 0 15px;
+ 
+  }
+
+
+  .MenuTopics-light, .MenuTopics-dark{
+      margin: 0 12px;
+  }
+
+  .MenuDropDown-light{
+      background-color : #c7bda3;
+       border-radius : 10px;
+       position : absolute;
+  }
+
+      
+  .MenuDropDown-dark{
+      background-color : rgb(70, 66, 66);
+       border-radius : 10px;
+       position : absolute;
+       color: yellow;
+  }
+
+
+
+  .MenuLinks-dark > Link{
+      color:white;    
+      text-decoration: none;
+      background-color: darkblue;
+      
+
+  }
+
+  .MenuLinks-light:hover{
+      background-color: darkblue;
+      border-radius: 10px;
+      padding: 10px;
+  }
+
+  
+  .MenuLinks-dark:hover{
+      background-color: green;
+      border-radius: 10px;
+      padding: 10px;
+      color: red;
+  }
+
+  .MenuLinks-light, .MenuLinks-dark{
+      border-radius: 10px;
+      padding: 10px;
+      text-decoration: none;
+
+  }
+
+
+  
+
+        /** -------------------------------------------------------
+                  Button in MORE TASK PAGE
+  ------------------------------------------------------- */
+
+button.green.light{
+  background-color: rgb(9, 94, 9);
+}
+
+button.yellow.light{
+  background-color: rgb(114, 114, 14);
+}
+
+button.red.light{
+  background-color: rgb(100, 9, 9);
+}
+
+button.green.dark{
+  background-color: rgb(5, 62, 5);
+  color: lightgreen;
+  padding: 10px 20px;
+}
+
+button.yellow.dark{
+  background-color: rgb(91, 91, 5);
+  color: yellow;
+  padding: 10px 20px;
+}
+
+button.red.dark{
+  background-color: rgb(52, 2, 2);
+  color: red;
+  padding: 10px 20px;}
+
+
+
+
+
+  /** -------------------------------------------------------
+                  CONTENT IN MORE TASK
+  ------------------------------------------------------- */
+
+
+  .ThemesRadioTasks{
+      display: inline;
+  }
+
+  .form-check{
+      margin: 10px 20px;
+      background-color: rgb(79, 79, 66);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      
+  }

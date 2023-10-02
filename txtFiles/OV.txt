@@ -1,0 +1,128 @@
+Definition 8 Let F : k^n −→ k^o be a polynomial map of the form.
+F(x1, ...xo, x˜1, ..., x˜v) = (f1, ..., fo),
+where the f1, ..., fo ∈ k[x1, ..., xo, x˜1, ..., x˜v] are Oil and Vinegar polynomials.
+Then F is called an Oil-Vinegar map.
+The main idea of the Oil-Vinegar map F is that we want to invert this map
+for a fixed vector (for instance m = (m1, ..., mo) ∈ k^o), we do this by choosing
+randomly (or if we are given) a vector (˜x′1, ..., x˜′v) that we assign to the Vinegar
+variables. This will give us a set of linear equations of just Oil variables given
+by F(x1, ..., xn, x˜1, ..., x˜n) = (m1, ..., mo).
+The inverse is of (m1, ..., mo) under F is given by F^(-1)(m1, ..., mo) = (x∗1, ...x∗o).
+Let us take a closer look at the Oil-Vinegar map F.
+Assume again that we have (m1, ..., mo) ∈ k^o which is a fixed vector and the
+Vinegar variables (˜x′1, ..., x˜′v) ∈ k^v, which we will give some value, leaving us
+with (x∗1, ..., x∗o) that satisfies
+F(x∗1, ..., x∗o, x˜′1, ..., x˜′v) = (m1, ..., mo).
+The inverse is given as
+F^−1(m1, ..., mo) = (x∗1, ..., x∗o).
+Notice that the notation of F
+−1 does not show that we depend on the value of (˜x′1, ..., x˜′v) ∈ k^v, however we will only be concerned whether or not F−1(m1, ..., mo) exists for a given value of (˜x′1, ..., x˜′v).
+From here, we choose the map F and then hide it. This is done by using an
+invertible and affine map L : k
+n −→ k^n, which is of the form(x1, ..., xo, x˜1, ..., x˜v) = L(z1, ..., zn).
+Then this is composed with the Oil Vinegar map F.
+That leaves us with the map F : k
+n −→ k^o defined by
+F = F ◦ L = (f 1, ..., f o).
+Key Generation The key generation returns a public key (the verification key)
+and a secret key (the signature key).
+21
+The public key consists of the field k, including the additive and multiplicative
+structure. Also the map F = F ◦ L.
+The private key consists of the invertible affine transformation L : k
+n −→ k^n and the Oil Vinegar map F.
+Signature Generation:
+Let m = (m1, ..., mo) ∈ k
+o be a document (or the hash of a document) that
+needs to be signed. The signer has to first compute
+(x∗1, ..., x∗o) = F^−1(m1, ..., mn)for some random choice of (˜x′1, ..., x˜′v) ∈ k^v.
+This is the same as solving the linear system
+F(x1, ..., xo, x˜1, ..., x˜v) = (m1, ..., mo).
+(Because, as we mentioned above, we choose random values for the Vinegar
+variables, leaving us with the linear equations with only Oil variables).
+The signer now computes the signature of (m1, ..., mo) as
+σ = (σ1, ..., σn) = L^−1(x∗1, ..., x∗o, x˜1, ..., x˜v).
+Signature Verification:
+To check if σ = (σ1, ..., σn) is a valid signature for the message (m1, ..., m′
+o) the recipient simply see if
+F(σ1, .., σn) = (m1, ..., mo).
+Correctness of the Oil Vinegar signature scheme
+We want to look at the correctness of the Oil Vinegar signature scheme. From
+Definition 4 we have that correctness of a signature scheme is
+V(vk, m, S(sk, m)) = 1.
+Where vk and sk are the verification key and signature key, respectively.
+The verification key vk is F = F ◦L, and the signature key sk is F and L. Since
+the signature σ = L^−1 ◦ F^−1(m), we simply need to show
+F ◦ L(L^−1◦ F^−1(m))= F ◦ F^−1(m) = m.
+The verification algorithm V will return 1.
+
+Hence, the following theorem is proved:
+Theorem 4 The Oil and Vinegar Signature Scheme is correct.
+
+
+Ta med denne forklaringen av OV også ta med et eksempel av OV fra bacheloren.
+
+
+
+
+
+
+
+
+
+
+
+---Fyll inn likningene etterhvert, ta inn beskrivelsen her
+
+
+In this section we will take a look at a cryptographic algorithm that ties to quantum cryptography (href til en link med kvantecryptography). The name of this cryptosystem is the Oil and Vinegar Signature Scheme. This schemes stems from the linearization attack done on the matsomoto imai cryptosystem (href til enten en egen page eller nettet). The system was supposed to be used for digital signatures. However it was broken by Shamir & Kipnis.
+
+This is how the scheme goes:
+
+First we need to define an Oil-Vinegar polynomial: 
+
+Referer til definition 7. 
+
+Referer til en Oil-Vinegar map.
+
+
+Now this leaves us with the public key which is made by taking:
+
+Referer til s.21
+
+
+To sign a document (or the hashed value of the document) 
+Referer til signering av dokument s.22
+
+og kjapt om verisering av dokumentet. 
+
+
+Now, lets put away all the theory and look at an example, which would help understanding the theory part more.
+
+We will use GF(2)Let n = 6 since this is a
+scheme where o = v, we have that o = v = 3. Let
+
+skriv ned likningene
+
+Now we want to write these equations in bilinear form, this is because we have to map and compose with another matrix L. 
+
+
+Hvis matriseformen til likningene. 
+
+Fortell hva L er.
+
+Skriv ned L og vis hva vi skal regne ut (s.24)
+
+
+Det du har regnet ut nå er de offentlige nøklene. 
+
+Now that we have our public key, which consits of --- We will use this to find our signature and then show how we can verify this later on. 
+
+
+
+
+
+
+
+
+
