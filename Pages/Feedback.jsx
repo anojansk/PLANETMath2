@@ -1,6 +1,6 @@
 import React from "react"
 import Stars from "../Components/FeedBackComponents/Stars"
-import ToDataBase from "../Components/ToDataBase"
+//import ToDataBase from "../Components/ToDataBase"
 export default function Feedback(){
 
     const [ratingOverall, setRatingOverall] = React.useState( {
@@ -144,13 +144,6 @@ export default function Feedback(){
         <div style={{padding: "40% 0" }}>
                     <h1>Thank you for the feedback</h1> 
                     <h2>Enjoy and learn more!</h2>
-                    <ToDataBase 
-                        ratingOverall={ratingOverall}
-                        ratingNavigation={ratingNavigation}
-                        ratingMath = {ratingMath}
-                        ratingTasks = {ratingTasks}
-                        comment = {comment}
-                    />
                 </div>
         }
         </div>

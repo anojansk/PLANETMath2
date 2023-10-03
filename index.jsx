@@ -5,7 +5,7 @@ import {  BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import CRT from "./Pages/NumberTheory/CRT"
 import FLT from './Pages/NumberTheory/FLT';
 import RSA from './Pages/Cryptography/PKE/RSA';
-import Layout from '||omponents/Layout';
+import Layout from './Components/Layout';
 import OV from './Pages/Cryptography/QuantumPKE/OV';
 import MoreTasksLayout from './Components/MoreTasksLayout';
 import MTDifficult from './Components/MTTasks.jsx/MTDifficult';
