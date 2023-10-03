@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ReactDomServer from 'react-dom/server';
 
 
 const MathJaxComponent = ({ mathExpression}) => {
