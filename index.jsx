@@ -11,7 +11,7 @@ import MoreTasksLayout from './Components/MoreTasksLayout';
 import MTDifficult from './Components/MTTasks.jsx/MTDifficult';
 import MTEasy from './Components/MTTasks.jsx/MTEasy';
 import MTIntermidiate from './Components/MTTasks.jsx/MTIntermidiate';
-import MTAll from './Components/MTTasks.jsx/MTAll';
+import MTAll from './Components/DumpsterFiles/MTAll';
 import ET from './Pages/NumberTheory/EulersTheorem';
 import EPF from './Pages/NumberTheory/EulersPhiFunction';
 import ElGamal from './Pages/Cryptography/PKE/ElGamal';
@@ -20,6 +20,7 @@ import DH from './Pages/Cryptography/DH';
 import Groups from './Pages/AbstractAlgebra/Groups';
 import Feedback from './Pages/Feedback';
 import CG from './Pages/AbstractAlgebra/CyclicGroups';
+import LagrangeInterpolation from './Pages/NumericalAnalysis/LagrangeInterpolation.jsx';
 
 const ToggleContext = React.createContext()
 
@@ -53,27 +54,25 @@ const pageColor = DarkMode ? "dark" : "light"
             <Route  path="FLT" element={<FLT />}/>
             <Route  path="RSA" element={<RSA />}/>
             <Route path="ET" element={<ET />}/>
+            <Route path="LagrangeInterpolation"
+                   element={<LagrangeInterpolation />}/>
             <Route path="EPF" element={<EPF />}/>
             <Route path="ElGamal" element={<ElGamal />}/>
             <Route path="DH" element={<DH />}/>
             <Route path="MI" element={<MI />}/>
             <Route path="Groups" element={<Groups />}/>
             <Route path="CyclicGroups" element={<CG />}/>
+           
 
-
+           
             <Route path="/moretasks" element = {<MoreTasksLayout />}>
             <Route index element={<MTEasy />}/>
             <Route  path="intermidiate" element={<MTIntermidiate />}/>
             <Route  path="difficult" element={<MTDifficult />}/>
-            <Route  path="all" element={<MTAll />}/>
             </ Route>
             
-              
+            
             <Route path="Feedback" element={<Feedback />}/>
-
-
-
-
             </Route>
     
         </Routes>

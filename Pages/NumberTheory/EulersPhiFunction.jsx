@@ -1,6 +1,5 @@
 import React from "react"
 import MathJaxComponent from "../../Components/MathJax"
-import TYMini from "../../Components/TestYourSelf/TestYourSelf"
 import TestYourSelf from "../../Components/TestYourSelf/TestYourSelf"
 
 export default function EPF(){

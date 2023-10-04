@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { BsToggleOff, BsToggleOn } from "react-icons/bs"
 import {PiPlanetDuotone} from "react-icons/pi"
 import MenuNavBar from "./MenuComponents/MenuNavBar"
-import NavPathonentTDD from "./MenuComponents/NavComponentTopic&DropDown"
+import NavComponentTDD from "./MenuComponents/NavComponentTopic&DropDown"
 import { ToggleContext } from "../index"
 
 
@@ -28,13 +28,11 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
                             {Path : "MI", Name : "DUMMY3"}, 
                             {Path : "DH", Name : "DUMMY4"}]
     
-    const LinearAlgebraItems = [{Path : "RSA", Name : "DUMMY1"}, 
-                                { Path : "OV", Name : "DUMMY2"}  , 
-                                {Path : "MI", Name : "DUMMY3"}]
+    const NumericalAnalysisItems = [{Path : "LagrangeInterpolation", Name : "Lagrange Interpolation"}]
     
                                     
     const AlgebraItems = [{Path : "Groups", Name : "Groups"} , 
-                            { Path : "CG", Name : "Sub Groups"}  , 
+                            { Path : "CyclicGroups", Name : "Sub Groups"}  , 
                             {Path : "CyclicGroups", Name : "Cyclic Groups"}]
 
 
@@ -42,23 +40,23 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
         <header className={pageColor}>
         <h2><Link to="/" className="Home">PlanetOfMath <PiPlanetDuotone size={35} /></Link></h2>
         <MenuNavBar>
-           <NavPathonentTDD
+           <NavComponentTDD
            topicName="Cryptography"
            listLinkNames={CryptographyItems}
            />
-           <NavPathonentTDD
-           topicName="Linear Algebra"
-           listLinkNames={LinearAlgebraItems}
+           <NavComponentTDD
+           topicName="Numerical Analysis"
+           listLinkNames={NumericalAnalysisItems}
            />
-            <NavPathonentTDD
+            <NavComponentTDD
            topicName="Abstract Algebra"
            listLinkNames={AlgebraItems}
            />
-           <NavPathonentTDD
+           <NavComponentTDD
            topicName="Number Theory"
            listLinkNames={NumberTheoryItems}
            />
-           <NavPathonentTDD
+           <NavComponentTDD
            topicName="Statistics"
            listLinkNames={StatisitcsItems}
            />
@@ -70,3 +68,5 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
     )
 
 }
+
+

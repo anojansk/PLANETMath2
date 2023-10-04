@@ -1,6 +1,6 @@
 import React from "react"
 import Button from "../Button"
-import ChooseCategory from "./ChooseCategory"
+import ChooseOption from "./ChooseOption"
 
 
 export default function RightColomnMTT({TasksFromDataSet, categoryFromRB, handleAnswer}){
@@ -23,6 +23,8 @@ React.useEffect(() =>{
     const filteredQuestions = TasksFromDataSet.Tasks.filter((tasks) =>{
         return tasks.category == categoryFromRB})
     setArrayWithQuestions(filteredQuestions)
+    setNrQuestions(0)
+    setNrCorrectAnswer(0)
     },[categoryFromRB])
 
         
@@ -70,13 +72,12 @@ React.useEffect(() =>{
         :
         <>
        <h4>{taskObject.question}</h4>
-       <ChooseCategory
-       handleClick={handleAnswer}
-       categoryFromRB={categoryFromRB}
-       listOfOptions={taskObject.options}
-       chosenAnswer={chosenAnswer}
-       />
-       <Button handleClick={NewQuestionClick} >New Question</Button>
+       <ChooseOption 
+        handleClick={handleAnswer}
+        listOfOptions={taskObject.options}
+        chosenAnswer={chosenAnswer}
+        /> 
+        <Button handleClick={NewQuestionClick} >New Question</Button>
        <Button handleClick={NewQuestionClick} >Check answer</Button>
         <h3>{nrCorrectAnswers} / {nrQuestions}</h3> 
          </>

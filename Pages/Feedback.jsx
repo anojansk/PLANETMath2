@@ -1,6 +1,7 @@
 import React from "react"
 import Stars from "../Components/FeedBackComponents/Stars"
 //import ToDataBase from "../Components/ToDataBase"
+
 export default function Feedback(){
 
     const [ratingOverall, setRatingOverall] = React.useState( {
@@ -138,7 +139,7 @@ export default function Feedback(){
                 width:"200px", height: "100px"}}></textarea>
                 <br />
             <button onClick={handleSubmit} style={{marginTop: "20"}}>Submit</button>
-        </div>¨
+        </div>
         </form>
         :
         <div style={{padding: "40% 0" }}>

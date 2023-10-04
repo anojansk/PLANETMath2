@@ -14,7 +14,7 @@ export default function MainPageMTTasks({TasksFromDataSet}){
     }
 
 
-    const listOfOptions = ["Cryptography", "Linear Algebra",
+    const listOfOptions = ["Cryptography", "Numerical Analysis",
                     "Number Theory", "Algebra", "Statistics"]
 
     

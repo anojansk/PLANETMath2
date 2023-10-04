@@ -23,27 +23,20 @@ export default function ToDataBase({ratingOverall, ratingNavigation, ratingMath,
 
   
     const Feedback = ref(database, "FeedbackUsers")
-   /* const NavigationRatingInDB = ref(database, "NavigationRating")
+    const NavigationRatingInDB = ref(database, "NavigationRating")
     const MathRatingInDB = ref(database, "MathRating")   
     const TasksRatingInDB = ref(database, "TasksRating")
-    const commentInDB = ref(database,"Comments") */
+    const commentInDB = ref(database,"Comments")
   
       push(Feedback, FeedbackUser)
 
-    /*ratingNavigation.rating != "0" && push(NavigationRatingInDB, ratingNavigation.rating)
-    ratingMath.rating != "0" && push( MathRatingInDB , ratingMath.rating)
-    ratingTasks.rating != "0" && push(TasksRatingInDB, ratingTasks.rating)
-    comment != ""  && push(commentInDB, comment)*/
 
 
-
-    return(
-        <div>
-        </div>
-    )
+      return(
+        null
+      )
     
 }
 
-export {app, database}
 
 

@@ -59,51 +59,205 @@ Now Bob have to decrypt the ciphertext Alice sent. He uses the decryption algori
 
 Bob has now been able to decrypt the cipher text that Alice sent, and read her initial message. 
 
-\[\]
+In this section we are going to look at LU Factorisation. 
 
+This is a method to factorise a matrix, and by doing this we can solve linear systems, as we will take a look 
+at further down. 
 
-     Now, lets look at another example, but this time with $\\mathbb{Z}_{31}^{+}$ and let $ g = 14 $
-     
-     Alice wants to send a message $m = 22$ to Bob, but need to encrypt the message first, again they agree upon using the ElGamal algorithm. 
-    Before she starts encrypting the message she chooses $r \\leftarrow {0,1, \\ldots , n-1}$ uniformly random and ends up with $ r = 8$. And meanwhile Bob finds 
-    $ x \\leftarrow {0,1, \\ldots , n-1}$ and ends up with $x = 12$ Alice knows Bobs chosen key (that is, $x = 12$). Alice is generating the
-    cipher text that will be sent to Bob.$\\\\$
-\[
- c = (p,q) = (g \\cdot r, m + e_k \\cdot r) = (g \\cdot r, m + (g \\cdot x) \\cdot r) = (14 \\cdot 8 \\ (mod \\ 31) , ( 22 + (14 \\cdot 12) \\cdot 8 \\ (mod \\ 31)) = (19,2)
-\]
-
-The cipher text that Alice sends to bob is $c = (19,10)$ $\\\\$
-Now Bob have to decrypt the ciphertext Alice sent. He uses the decryption algorithm: 
+We can write the matrix $A$ as 
 \[
 
-    D(p,q) = q \\cdot p^{-x} = 2 + 19 \\cdot (-12)\\ (mod \\ 31) = 22 = m. ^\{(2)\}
+    A =    
+       \\begin{pmatrix}
+       a & b \\\\ 
+       c & d \\\\
+       \\end{pmatrix}
 
+    = 
+    \\begin{pmatrix}
+    1 & 0 \\\\ 
+    m & 1 \\\\
+    \\end{pmatrix}
 
-\]
-\[\]
-     
+    \\cdot 
 
-    3. We want to show that the ElGamal algorithm is correct, that is, $D(E(m,e_k),d_k) = m.$ $\\\\$
-    To show this we need to seperate the different variables and algorithms. 
-    We know the following: $\\\\$
-    $e_k = g^x$, $d_k = x$ and, $\\\\$
-    $E = (p,q) =  (g^r, m \\cdot (g^x)^r)$, $D = q \\cdot p^{-x}$ 
-$\\\\$ Some algebra will show us: 
+    \\begin{pmatrix}
+    u & v \\\\ 
+    0 & w \\\\
+    \\end{pmatrix}
+
+    = L \\cdot U
+\] 
+
+We can see that $a = u$, $b  = v$, $c = mu$ and $d = mv + w$. 
+
+For $A = \\mathbb{R}^{3 x 3}$
 
 \[
 
-    D(E(m,e_k),d_k) = D((p, q),x) = D((g^r, m \\cdot (g^x)^r),x) = m \\cdot (g^x)^r \\cdot (g^r)^{-x} 
-    = m \\cdot g^{rx} \\cdot g^{-rx} = m \\cdot g^{rx-rx} = m
+    A =    
+       \\begin{pmatrix}
+       a & b & c\\\\ 
+       d & e & f\\\\
+       g & h & i\\\\
+       \\end{pmatrix}
+
+    = 
+
+    \\begin{pmatrix}
+    1 & 0 & 0        \\\\ 
+    l_{21} & 1 & 0  \\\\
+    l_{31} & l_{32} & 1\\\\
+    \\end{pmatrix}
+
+    \\cdot 
+
+    \\begin{pmatrix}
+    u_{11} & u_{12} & u_{13}\\\\ 
+    0 & u_{22} & u_{23}\\\\
+    0 & 0 & u_{33} \\\\
+    \\end{pmatrix}
+
+    \\\\
+
+    =   
+    \\begin{pmatrix}
+    u_{11} & u_{12} & u_{13}\\\\ 
+    l_{21}u_{11} & l_{21}u_{12} + u_{22} & l_{21}u_{13} + u_{23}\\\\
+    l_{31}u_{11} & l_{31}u_{12} + l_{32}u_{22} & l_{31}u_{13} + l_{32}u_{23} + u_{33} \\\\
+    \\end{pmatrix}
+
+\] 
+Lets look at an example. Our goal is to use LU factorisation on the $3x3$ matrix $A$. Let $A$ be:
+\[
+
+    A =    
+       \\begin{pmatrix}
+       2 & 2 & 3\\\\ 
+       4 & 3 & 14\\\\
+       6 & 5 & 20\\\\
+       \\end{pmatrix}
+
+\] 
+
+\[
+
+A =    
+\\begin{pmatrix}
+2 & 2 & 3\\\\ 
+4 & 3 & 14\\\\
+6 & 5 & 20\\\\
+\\end{pmatrix}
+
+=
+\\begin{pmatrix}
+u_{11} & u_{12} & u_{13}\\\\ 
+l_{21}u_{11} & l_{21}u_{12} + u_{22} & l_{21}u_{13} + u_{23}\\\\
+l_{31}u_{11} & l_{31}u_{12} + l_{32}u_{22} & l_{31}u_{13} + l_{32}u_{23} + u_{33} \\\\
+\\end{pmatrix}
+
+
+\] 
+
+This gives us some equations to work with, and solving these backwards will help us find the different values. 
+\[
+
+    u_{11} = 2, \\\\ u_{12} = 2, \\\\u_{13} = 3 \\\\
+    l_{21}u_{11}  = 4,\\\\ l_{21}u_{12} + u_{22} = 3, \\\\ l_{21}u_{13} + u_{23} = 14 \\\\
+    l_{31}u_{11} = 6, \\\\  l_{31}u_{12} + l_{32}u_{22} = 5, \\\\ l_{31}u_{13} + l_{32}u_{23} + u_{33} = 20
 
 \]
 
-Bobs decryption of Alice's encrypted message will display him the message and not something else. 
+Solving the different equations to find the different values: 
+\[
+u_{11} = 2,  u_{12} = 2,  u_{13} = 3,  u_{22} = -1,  u_{23} = 8, 
+u_{33} = 3,  l_{21} = 2,  l_{31} = 3,  l_{32} = 1
 
-    \[\]
+\]
+
+We can there factorise $A = L \\cdot U$ as: 
+
+\[
+
+    A =    
+       \\begin{pmatrix}
+       2 & 2 & 3\\\\ 
+       4 & 3 & 14\\\\
+       6 & 5 & 20\\\\
+       \\end{pmatrix}
+
+    =  L \\cdot U
+    =
+    \\begin{pmatrix}
+    1 & 0 & 0\\\\ 
+    2 & 1 & 0\\\\
+    3 & 1 & 1\\\\
+    \\end{pmatrix}
+
+    \\cdot 
+
+    \\begin{pmatrix}
+    2 & 2 & 3\\\\ 
+    0 & -1 & 8\\\\
+    0 & 0 & 3\\\\
+    \\end{pmatrix}
+
     
-    
+\] 
 
-     `
+The interesting thing we can do with the factorisation is to solve different linear systems. 
+
+\[   
+\\begin{pmatrix}
+2 & 2 & 3\\\\ 
+4 & 3 & 14\\\\
+6 & 5 & 20\\\\
+\\end{pmatrix}
+\\cdot
+\\begin{pmatrix}
+x \\\\ 
+y \\\\
+z \\\\
+\\end{pmatrix}
+=
+\\begin{pmatrix}
+13 \\\\ 
+50 \\\\
+72 \\\\
+\\end{pmatrix}
+
+\]
+
+\[
+
+\\begin{pmatrix}
+1 & 0 & 0\\\\ 
+2 & 1 & 0\\\\
+3 & 1 & 1
+\\end{pmatrix}
+\\cdot
+\\begin{pmatrix}
+2 & 2 & 3   \\\\ 
+0 & -1 & 8  \\\\
+0 & 0 & 3  
+\\end{pmatrix}
+\\begin{pmatrix}
+x \\\\ 
+y \\\\
+z 
+\\end{pmatrix}
+=
+\\begin{pmatrix}
+13 \\\\ 
+50 \\\\
+72 
+\\end{pmatrix}
+
+\]
+
+\[\]
+    
+`
 
             return(
                 <div>

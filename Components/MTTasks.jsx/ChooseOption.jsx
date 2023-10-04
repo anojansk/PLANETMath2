@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function ChooseCategory({handleClick, categoryFromRB, listOfOptions}){
+export default function ChooseOption({handleClick, listOfOptions, chosenAnswer}){
 
 for(let i = 0; i <listOfOptions.length; i++ ){
 
@@ -13,7 +13,7 @@ const RadioButtons = listOfOptions.map((option) => {
       <input
         type="radio"
         value={option}
-        checked= {categoryFromRB == option}
+        checked= {chosenAnswer == option}
         onClick={handleClick}
         className="form-check-input"
       />

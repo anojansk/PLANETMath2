@@ -53,7 +53,7 @@ header {
 
 .Toggle{
   position: absolute;
-  right: 10;
+  right: 1%;
 }
 
 
@@ -86,9 +86,7 @@ header {
       
   }
 
-  .MenuTopic.Cryptography{
-      color : black;
-  }
+  
 
 
   .MenuTopic:hover{
@@ -106,37 +104,6 @@ header {
       
       
   }
-
-  
-/**   .MenuDropDown.MDDLinearAlgebra{
-      background-color: red;
-      margin-left: 150px;
-      width: 50px;
-      text-align: center;
-  }
-
-  .MenuDropDown.MDDCryptography{
-      background-color: GREEN;
-      margin-left: 0px;
-      width: 150px;
-      text-align: center;
-
-  }
-
-  .MenuDropDown.MDDNumberTheory{
-      margin-left: 270px;
-      width: 150px;
-      text-align: center;
-
-  }
-
-  .MenuDropDown.MDDStatistics{
-      margin-left: 400px;
-      width: 40px; 
-      text-align: center;
-
-  } */
-
 
 
   .Test:hover{
@@ -253,7 +220,7 @@ img {
 
 
   footer {
-      height: 90px;
+      height: 100px;
       display: flex;
       padding: 15px;
       position: relative;
@@ -261,14 +228,17 @@ img {
 
   .LinkInFooter{
       position: absolute;
-      right: 10;
-      bottom : 30;
+      right:0;
+      top:70%;
+
+
   }
 
-  .LinkInFooter.dark > a {
+  .LinkInFooter > a {
       margin: 0 8px;
       text-decoration: none;
       color: brown
+
   }
 
 
