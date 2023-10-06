@@ -28,7 +28,8 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
                             {Path : "MI", Name : "DUMMY3"}, 
                             {Path : "DH", Name : "DUMMY4"}]
     
-    const NumericalAnalysisItems = [{Path : "LagrangeInterpolation", Name : "Lagrange Interpolation"}]
+    const NumericalAnalysisItems = [{Path : "LagrangeInterpolation", Name : "Lagrange Interpolation"},
+                                    {Path : "LUFactorising", Name : "LU Factorization"}]
     
                                     
     const AlgebraItems = [{Path : "Groups", Name : "Groups"} , 

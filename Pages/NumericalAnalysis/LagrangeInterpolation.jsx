@@ -1,5 +1,7 @@
 import React from "react"
-import MathJaxComponent from "../../Components/MathJax" 
+import MathJaxComponent from "../../Components/MathJax"
+import TestYourSelf from "../../Components/TestYourSelf/TestYourSelf"
+import LagrangeCalcDisplay from "../../Components/Calculators&Calculatordisplay/LagrangeInterpolCalcDisp"
 
 export default function LagrangeInterpolation(){
 
@@ -104,7 +106,8 @@ We can now calculate $p_2(x)$ for the function $3e^{2x}$ over the interval $[-2,
         <div>
         <h3>In this section we will take a look at The Lagrange Interpolation Theorem.</h3>
         <MathJaxComponent mathExpression={LagrangeInterpolationContent}/>
-       <TestYourSelf themeInput = "LagrangeInterpolation" />
+        <LagrangeCalcDisplay />
+        <TestYourSelf themeInput = "LagrangeInterpolation" />
        <div className="underText" 
             style={{fontSize : "10px",
             marginBottom : "10px",

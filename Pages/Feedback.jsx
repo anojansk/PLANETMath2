@@ -1,6 +1,9 @@
 import React from "react"
 import Stars from "../Components/FeedBackComponents/Stars"
-//import ToDataBase from "../Components/ToDataBase"
+import ToDataBase from "../Components/ToDataBase"
+import FromDataBase from "../Components/FromDataBase"
+
+
 
 export default function Feedback(){
 
@@ -91,7 +94,7 @@ export default function Feedback(){
 
         {
            !pressedSubmit ? 
-                
+            
         <form>
             <div style={{padding : "10%"}}>
             <h3>How was your overall experience with this website?</h3>
@@ -141,17 +144,28 @@ export default function Feedback(){
             <button onClick={handleSubmit} style={{marginTop: "20"}}>Submit</button>
         </div>
         </form>
-        :
-        <div style={{padding: "40% 0" }}>
+        : 
+        <div> 
+
+        <ToDataBase 
+            ratingOverall={ratingOverall}
+            ratingNavigation={ratingNavigation}
+            ratingMath={ratingMath}
+            ratingTasks={ratingTasks}
+            comment={comment}
+        />
+                 <div style={{padding: "40% 0" }}>
                     <h1>Thank you for the feedback</h1> 
                     <h2>Enjoy and learn more!</h2>
                 </div>
+        </div>
         }
         </div>
         
         <div className="column">
             <h3>Recieved from database</h3>
             <h4>Avarage of them all</h4>
+            <FromDataBase />
             {comment}      
         </div>
     </div>

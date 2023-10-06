@@ -1,0 +1,20 @@
+Updates on project, what needs to be fixed: 
+
+
+FeedBackComp:
+    1. Give a warning if not all stars in feedback has been clicked. Better than 
+    to check later in FromDataBase. 
+    
+    2. Fix From DataBase such that: 
+        - Fetching goes as expected. 
+        - Calculate avarage s.t it can be displayed on right column. 
+    
+    3. Security rules in FireBase. 
+
+    4. LagrangeCalc:
+        - Inputs for interpolation points x and respective y values. 
+        - buttons to Submit
+        - Calculate in another Component
+        
+
+

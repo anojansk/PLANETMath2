@@ -270,6 +270,30 @@ img {
     }
   
 
+  .AverageFromDatabase{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .averageOR{
+        flex-basis: 25%;
+
+  }
+
+  .averageNAV{
+    flex-basis: 25%;
+
+  }
+
+  .averageMath{
+    flex-basis: 25%;
+
+  }
+
+  .averageTasks{
+    flex-basis: 25%;
+
+  }
 
     /** -------------------------------------------------------
                   Dark and Light modes

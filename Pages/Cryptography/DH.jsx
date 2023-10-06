@@ -1,8 +1,8 @@
 import React from "react"
 import MathJaxComponent from "../../Components/MathJax"
 import TYMini from "../../Components/TestYourSelf/TestYourSelf"
-import DHCalculator from "../../Components/Calculators&Calucatordisplay/DHCalculator"
-import DHCalculatorDisplay from "../../Components/Calculators&Calucatordisplay/DHCalculatorDisplay"
+import DHCalculator from "../../Components/Calculators&Calculatordisplay/DHCalculator"
+import DHCalculatorDisplay from "../../Components/Calculators&Calculatordisplay/DHCalculatorDisplay"
 import TestYourSelf from "../../Components/TestYourSelf/TestYourSelf"
 
 

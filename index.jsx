@@ -21,6 +21,8 @@ import Groups from './Pages/AbstractAlgebra/Groups';
 import Feedback from './Pages/Feedback';
 import CG from './Pages/AbstractAlgebra/CyclicGroups';
 import LagrangeInterpolation from './Pages/NumericalAnalysis/LagrangeInterpolation.jsx';
+import LUFac from './Pages/NumericalAnalysis/LUFac';
+
 
 const ToggleContext = React.createContext()
 
@@ -56,6 +58,7 @@ const pageColor = DarkMode ? "dark" : "light"
             <Route path="ET" element={<ET />}/>
             <Route path="LagrangeInterpolation"
                    element={<LagrangeInterpolation />}/>
+            <Route path="LUFactorising" element={<LUFac />}/>
             <Route path="EPF" element={<EPF />}/>
             <Route path="ElGamal" element={<ElGamal />}/>
             <Route path="DH" element={<DH />}/>
