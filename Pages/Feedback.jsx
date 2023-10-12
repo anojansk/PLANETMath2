@@ -9,16 +9,16 @@ export default function Feedback(){
 
     const [ratingOverall, setRatingOverall] = React.useState( {
         rating : "",
-        clickedStar: "" })
+        clickedStar: "1" })
     const [ratingNavigation, setRatingNavigation] = React.useState({
         rating : "",
-        clickedStar: "" })
+        clickedStar: "1" })
     const [ratingMath, setRatingMath] = React.useState({
         rating : "",
-        clickedStar: "" })
+        clickedStar: "1" })
     const [ratingTasks, setRatingTasks] = React.useState({
         rating : "",
-        clickedStar: "" })
+        clickedStar: "1" })
 
     const [comment, setComment] = React.useState("");
     const [pressedSubmit, setPressedSubmit] = React.useState(false)
@@ -84,8 +84,9 @@ export default function Feedback(){
     }
 
     function handleSubmit(){
-        setPressedSubmit(true)
-    }
+            setPressedSubmit(true)
+        }
+    
 
 
     return(
@@ -166,7 +167,9 @@ export default function Feedback(){
             <h3>Recieved from database</h3>
             <h4>Avarage of them all</h4>
             <FromDataBase />
-            {comment}      
+            {comment} 
+
+            <h3>See all feedbacks</h3>     
         </div>
     </div>
     

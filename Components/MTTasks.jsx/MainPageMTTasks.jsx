@@ -9,7 +9,7 @@ export default function MainPageMTTasks({TasksFromDataSet}){
     const [categoryFromRB, setCategoryFromRB] = React.useState("Cryptography")
 
 
-    function handleRadioClick(event){
+    function handleRadioChange(event){
         setCategoryFromRB(event.target.value)
     }
 
@@ -26,7 +26,7 @@ export default function MainPageMTTasks({TasksFromDataSet}){
     
            <h3>Here we will keep the themes/all as radiobuttons</h3>
            <LeftColomnMTT 
-           handleRadioClick={handleRadioClick}
+           handleRadioChange={handleRadioChange}
            categoryFromRB={categoryFromRB}
            listOfOptions={listOfOptions}
            />

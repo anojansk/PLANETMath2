@@ -292,6 +292,24 @@ img {
 
   .averageTasks{
     flex-basis: 25%;
+  }
+
+  .CardStack{
+
+    display: flex;
+flex-wrap: wrap;
+  }
+  .commentCard{
+
+   border : 1px solid brown;
+   margin: 10px 0 10px 0;
+   width: 80%;
+   height: 100px;
+   background-color: rgba(203, 139, 79, 0.437);
+   color: White;
+   justify-content: center;
+
+    
 
   }
 

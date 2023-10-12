@@ -4,10 +4,14 @@ Updates on project, what needs to be fixed:
 FeedBackComp:
     1. Give a warning if not all stars in feedback has been clicked. Better than 
     to check later in FromDataBase. 
+        - FIXED: Changed to set default to be 1 star rather than 0. 
     
     2. Fix From DataBase such that: 
         - Fetching goes as expected. 
+            - FIXED. 
         - Calculate avarage s.t it can be displayed on right column. 
+            - FIXED'
+        - Make sure comments is recieved as exptected and finish the comments section stack. 
     
     3. Security rules in FireBase. 
 
@@ -15,6 +19,13 @@ FeedBackComp:
         - Inputs for interpolation points x and respective y values. 
         - buttons to Submit
         - Calculate in another Component
+
+    5. MoreTask page: 
+        - Solved problem as: Synching questions with category, start with 0. 
+        - Need to fix dispaly of the page such as:
+                - Next question/check answer button. (When new category is chosen)
+                - Checkanswer functionality needs to be implemented.
+                -
         
 
 

@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "../Button"
 import ChooseOption from "./ChooseOption"
+import MathJaxComponent from "../MathJax"
 
 
 export default function RightColomnMTT({TasksFromDataSet, categoryFromRB, handleAnswer}){
@@ -8,46 +9,64 @@ export default function RightColomnMTT({TasksFromDataSet, categoryFromRB, handle
 const [arrayWithQuestions, setArrayWithQuestions] = React.useState([])
 const [taskObject, setTaskObject] = React.useState({
     id : null,
-    category : "test",
+    category : "",
     question : "",
-    options : ["1","2","3","4"],
+    options : [],
     correct : ""
 })
 const [nrCorrectAnswers, setNrCorrectAnswer] = React.useState(0)
-const [nrQuestions, setNrQuestions] = React.useState(0)
+const [nrQuestions, setNrQuestions] = React.useState(-1)
 const [chosenAnswer, setChosenAnswer] = React.useState("")
-
+const [clickedCheckAnswer, setClickedCheckAnswer] = React.useState(false)
 
 
 React.useEffect(() =>{
     const filteredQuestions = TasksFromDataSet.Tasks.filter((tasks) =>{
         return tasks.category == categoryFromRB})
     setArrayWithQuestions(filteredQuestions)
-    setNrQuestions(0)
-    setNrCorrectAnswer(0)
+    setNrQuestions(-1)
+    setNrCorrectAnswer(-1)
+    setTaskObject(() => {
+
+        return {
+            id : null,
+            category : "",
+            question : "",
+            options : [],
+            correct : ""
+        }
+
+
+    })
     },[categoryFromRB])
 
         
-    function handleAnswer(event){
+    function handleChange(event){
         setChosenAnswer(event.target.value)
+    }
+
+
+    function checkAnswer(){
+      setClickedCheckAnswer((prevState => !prevState))
     }
 
 
 
     function NewQuestionClick(){
         setTaskObject(() => {
+            if(arrayWithQuestions.length > 0){
+                const randomNumber = Math.floor(Math.random() * arrayWithQuestions.length)
+                const chosenElement = arrayWithQuestions[randomNumber]
+                
+                //Chose Random question from arrayWithQuestions //Object'
 
-            const randomNumber = Math.floor(Math.random() * arrayWithQuestions.length)
-            const chosenElement = arrayWithQuestions[randomNumber]
-
-            //Chose Random question from arrayWithQuestions //Object'
-
-           return {
-            id : chosenElement.id ,
-            category : chosenElement.category,
-            question : chosenElement.question,
-            options : chosenElement.options,
-            correct : chosenElement.correct
+                return {
+                    id : chosenElement.id ,
+                    category : chosenElement.category,
+                    question : chosenElement.question,
+                    options : chosenElement.options,
+                    correct : chosenElement.correct
+                }
             }
         })
         setArrayWithQuestions((prevArray) =>{
@@ -62,6 +81,8 @@ React.useEffect(() =>{
         else{
             setNrQuestions((prevValue) => prevValue+1)
         }
+
+        setClickedCheckAnswer(false);
     }   
 
 
@@ -71,18 +92,24 @@ React.useEffect(() =>{
         {arrayWithQuestions.length == 0 ? <h3>No more question try another category</h3>
         :
         <>
-       <h4>{taskObject.question}</h4>
-       <ChooseOption 
-        handleClick={handleAnswer}
-        listOfOptions={taskObject.options}
-        chosenAnswer={chosenAnswer}
-        /> 
-        <Button handleClick={NewQuestionClick} >New Question</Button>
-       <Button handleClick={NewQuestionClick} >Check answer</Button>
-        <h3>{nrCorrectAnswers} / {nrQuestions}</h3> 
-         </>
-        }
 
+       {clickedCheckAnswer ? 
+            (chosenAnswer == taskObject.correct ?
+                <h3 style={{color:"green"}}>That is correct</h3> 
+            :   <h3 style={{color:"red"}}>That is wrong</h3> ) 
+        : <h4><MathJaxComponent mathExpression={taskObject.question} /></h4>}
+       <ChooseOption 
+            handleChange={handleChange}
+            listOfOptions={taskObject.options}
+            chosenAnswer={chosenAnswer}
+        /> 
+        <Button handleClick={NewQuestionClick} > New Question </Button>
+        <Button handleClick={checkAnswer} > {clickedCheckAnswer ? "Show Question" : "Check Answer" }</Button>
+        {nrQuestions == -1 ? 
+            null : <h3>{nrCorrectAnswers} / {nrQuestions}</h3>}
+        </>
+        }
+        
         </div>
     )
 }

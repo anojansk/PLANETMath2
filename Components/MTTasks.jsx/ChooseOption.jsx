@@ -1,30 +1,29 @@
 import React from "react"
 
 
-export default function ChooseOption({handleClick, listOfOptions, chosenAnswer}){
+export default function ChooseOption({handleChange, listOfOptions, chosenAnswer}){
 
-for(let i = 0; i <listOfOptions.length; i++ ){
 
-}
+  const RadioButtons = listOfOptions.map((option) => {
+      return(
+      <div className="form-check">
+        <label>
+          <input
+            type="radio"
+            value={option}
+            checked= {chosenAnswer == option}
+            onChange={handleChange}
+            className="form-check-input"
+          />
+          {option}
+        </label>
+    </div>)
+  })
 
-const RadioButtons = listOfOptions.map((option) => {
-    return(<div className="form-check">
-    <label>
-      <input
-        type="radio"
-        value={option}
-        checked= {chosenAnswer == option}
-        onClick={handleClick}
-        className="form-check-input"
-      />
-      {option}
-    </label>
-  </div>)
-})
-return(
-  <div>
-{RadioButtons}
-</div>
+  return(
+    <div>
+      {RadioButtons}
+    </div>
 
     )
 }

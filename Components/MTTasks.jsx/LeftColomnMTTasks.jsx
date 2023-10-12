@@ -2,16 +2,15 @@ import React from "react"
 import ChooseCategory from "./ChooseCategory"
 
 
-export default function LeftColomnMTT({handleRadioClick, categoryFromRB, 
-    listOfOptions,
-chosenAnswer}){
+export default function LeftColomnMTT({handleRadioChange, categoryFromRB, 
+    listOfOptions}){
 
     
 
 
     return(
         <div>
-        <ChooseCategory handleClick={handleRadioClick}
+        <ChooseCategory handleRadioChange={handleRadioChange}
                      categoryFromRB={categoryFromRB} 
                      listOfOptions={listOfOptions}
                      

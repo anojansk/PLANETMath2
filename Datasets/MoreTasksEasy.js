@@ -6,7 +6,8 @@ export default {
          {
              id: 1,
              category : `Number Theory`,
-             question : `Find the solution of this linear system \[
+             question : `Find the solution of this linear system 
+             \[
              x_1 ≡ 2 (mod 3)             
              x_2 ≡ 4 (mod 5)
              x_3 ≡ 5 (mod 7)
@@ -32,9 +33,9 @@ export default {
             id: 3,
             category : `Number Theory`,
             question : `Find the solution of this linear system \[
-            x_1 ≡ 2 (mod 3)             
-            x_2 ≡ 1 (mod 4)
-            x_3 ≡ 3 (mod 5)
+            x_1 ≡ 2 \\ (mod \\ 3)  \\\\           
+            x_2 ≡ 1 \\ (mod  \\ 4) \\\\
+            x_3 ≡ 3 \\ (mod  \\ 5) 
             \]`,
            options : ["x ≡ 9 (mod 60)","x ≡ 53 (mod 60)","x ≡ 43 (mod 60)","x ≡ 60 (mod 60)"],
            correct : "x ≡ 53 (mod 60)"
@@ -120,67 +121,71 @@ export default {
         },
         {
             id: 12,
-            category : `Number Theory`,
-            question : `What is the rest of 9^238/17 
+            category : `Cryptography`,
+            question : `GF(8) is the field, , 
             \]`,
-           options : ["7","8","9","10"],
+           options : ["18","27","12","5"],
            correct : "5"
 
         },   {
             id: 13,
-            category : `Number Theory`,
-            question : `What is the rest of 5^78/13
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
            options : ["18","27","12","5"],
            correct : "5"
+
 
         },
         {
             id: 14,
-            category : `Number Theory`,
-            question : `What is the rest of 9^238/17 
-            \]`,
-           options : ["7","8","9","10"],
-           correct : "5"
-
-        },   {
-            id: 15,
-            category : `Number Theory`,
-            question : `What is the rest of 5^78/13
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
            options : ["18","27","12","5"],
            correct : "5"
+
+
+        },   {
+            id: 15,
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
+            \]`,
+           options : ["18","27","12","5"],
+           correct : "5"
+
 
         },
         {
             id: 16,
-            category : `Number Theory`,
-            question : `What is the rest of 9^238/17 
-            \]`,
-           options : ["7","8","9","10"],
-           correct : "5"
-
-        },   {
-            id: 17,
-            category : `Number Theory`,
-            question : `What is the rest of 5^78/13
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
            options : ["18","27","12","5"],
            correct : "5"
 
+        },   {
+            id: 17,
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
+            \]`,
+           options : ["18","27","12","5"],
+           correct : "5"
+
+
         },
         {
             id: 18,
-            category : `Number Theory`,
-            question : `What is the rest of 9^238/17 
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
-           options : ["7","8","9","10"],
+           options : ["18","27","12","5"],
            correct : "5"
 
         },   {
             id: 19,
-            category : `Number Theory`,
-            question : `What is the rest of 5^78/13
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
            options : ["18","27","12","5"],
            correct : "5"
@@ -188,12 +193,118 @@ export default {
         },
         {
             id: 20,
-            category : `Number Theory`,
-            question : `What is the rest of 9^238/17 
+            category : `Cryptography`,
+            question : `GF(7) is the field, , 
             \]`,
-           options : ["7","8","9","10"],
+           options : ["18","27","12","5"],
            correct : "5"
 
+
         },
+        {
+            id: 21,
+            category : `Number Theory`,
+            question : `Find the solution of this linear system \[
+            x_1 ≡ 9 (mod 11)             
+            x_2 ≡ 6 (mod 13)
+            x_3 ≡ 1 (mod 7)
+            \]`,
+           options : ["x ≡ 429 (mod 1001)","x ≡ 29 (mod 1001)","x ≡ 526 (mod 1001)","x ≡ 712 (mod 1001)"],
+           correct : "x ≡ 526 (mod 1001)"
+
+        },   {
+           id: 22,
+           category : `Cryptography`,
+           question : `Let $Z_{11}^{*}$ be the field, Alice recieves a random integer $r_A=7$ , and Bob recieves a random integer $r_B = 5$ 
+           What will be their shared key using the Diffie Hellman protocol?
+           `,
+          options : ["1","2","3","4"],
+          correct : "1"
+
+       },
+       {
+           id: 23,
+           category : `Cryptography`,
+           question : `Let $Z_{13}^{+}$ be the field, Alice recieves a random integer $r_A=8$ , and Bob recieves a random integer $r_B = 10$ 
+           What is $k_A$ and $k_B$ respectively, using the Diffie Hellman protocol?
+           `,
+          options : ["10,9","2,8","4,5","14,13"],
+          correct : "4,5"
+
+       },   {
+           id: 24,
+           category : `Cryptography`,
+           question : `Let $Z_{13}^{+}$ be the field, Alice recieves a random integer $r=8$ , and Bob recieves a random integer $x = 7$ Alice wants to send
+           the message $m = 8$ to Bob. 
+           What is the ciphertext $c = (p,q)$, using ElGamal?
+           `,
+          options : ["(6,5)","(4,10)","(3,3)","(7,12)"],
+          correct : "(4,10)"
+
+
+       },
+       {
+           id: 25,
+           category : `Cryptography`,
+           question : `Let $Z_{9}^{+}$ be the field. Alice wants to send a message $m = 5$ to Bob. After successfully decrypting the encrypted ciphertext $c$ what will Bob read? `,
+          options : ["To answer this, we need the values $r$ and $x$ (their random integers)","Message $m$, that is $5$"],
+          correct : "Message $m$, that is $5$"
+
+
+       },   {
+           id: 26,
+           category : `Cryptography`,
+           question : `Let $Z_{13}^{+}$ be the field, Alice recieves a random integer $r=8$ , and Bob recieves a random integer $x = 7$ Alice wants to send
+           the message $m = 8$ to Bob. 
+           What is the ciphertext $c = (p,q)$, using RSA?
+           `,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+
+       },
+       {
+           id: 27,
+           category : `Cryptography`,
+           question : `Let $Z_{13}^{+}$ be the field, Alice recieves a random integer $r=8$ , and Bob recieves a random integer $x = 7$ Alice wants to send
+           the message $m = 8$ to Bob. 
+           What is the ciphertext $c = (p,q)$, using RSA?
+           `,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+       },   {
+           id: 28,
+           category : `Cryptography`,
+           question : `MI`,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+
+       },
+       {
+           id: 29,
+           category : `Cryptography`,
+           question : `MI`,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+       },   {
+           id: 30,
+           category : `Cryptography`,
+           question : `OV`,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+       },
+       {
+           id: 31,
+           category : `Cryptography`,
+           question : `OV`,
+          options : ["18","27","12","5"],
+          correct : "5"
+
+
+       }
      ]
  }
