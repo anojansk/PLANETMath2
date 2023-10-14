@@ -1,6 +1,7 @@
 import React from "react"
 import MathJaxComponent from "../../Components/MathJax"
 import TestYourSelf from "../../Components/TestYourSelf/TestYourSelf"
+import EPFCalcDisplay from "../../Components/Calculators&Calculatordisplay/EPFCalcDisplay"
 
 export default function EPF(){
 
@@ -83,6 +84,7 @@ As you may notice, the formula we used is the general way rule that works for al
 		<div>
          <h3>In this section we will look at the Euler Phi-Function and some if its properties. .</h3>
 		<MathJaxComponent mathExpression={EPFContent} />
+		<EPFCalcDisplay />
       <TestYourSelf themeInput = "EPF" />
 		</div>
 	)

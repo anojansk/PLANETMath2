@@ -151,10 +151,11 @@ button{
 
 
 
-input {
+input.inpField {
   background-color: white;
-  color: red;
   max-width: 300px;
+  height: 33px;
+  border-radius: 10px;
   
 }
 

@@ -61,8 +61,8 @@ export default {
         {
             id: 7,
             theme : `EPF`,
-            question : `Find $13$`,
-            hint : `$prime$ prime`,
+            question : `Find $\\phi (13)$`,
+            hint : `prime`,
             answer : `12`
 
         },
@@ -71,7 +71,7 @@ export default {
             theme : `EPF`,
             question : `Find $\\phi(371800)$`,
             hint : `Primes are $13, 11, 5$ and $2$`,
-            answer : `Solution: $124800$`
+            answer : `124800`
         },
 
         {    id: 9,
@@ -83,18 +83,20 @@ export default {
         },
 
         {    id: 10,
-            theme : `CRT`,
-            question : `what is 4+4`,
-            hint : `its 4 +  4`,
-            answer : `8`
+            theme : `EPF`,
+            question : `What is $\\phi (9374)$`,
+            hint : `Primes are: 2, 49, 109`,
+            answer : `4536`
 
         },
         {
             id: 11,
-            theme : `CRT`,
-            question : `5`,
-            hint : `its 1 +  1`,
-            answer : `1`
+            theme : `EPF`,
+            question : `What is $\\phi(4838400)$?`,
+            hint : `4838400 can be written as: \[ 
+                2^{10} \\cdot 3^3 \\cdot 5^2 \\cdot 7   
+            \] `,
+            answer : `1105920`
 
         },
         {

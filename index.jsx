@@ -11,7 +11,7 @@ import MoreTasksLayout from './Components/MoreTasksLayout';
 import MTDifficult from './Components/MTTasks.jsx/MTDifficult';
 import MTEasy from './Components/MTTasks.jsx/MTEasy';
 import MTIntermidiate from './Components/MTTasks.jsx/MTIntermidiate';
-import MTAll from './Components/DumpsterFiles/MTAll';
+//import MTAll from './Components/DumpsterFiles/MTAll';
 import ET from './Pages/NumberTheory/EulersTheorem';
 import EPF from './Pages/NumberTheory/EulersPhiFunction';
 import ElGamal from './Pages/Cryptography/PKE/ElGamal';
@@ -22,6 +22,8 @@ import Feedback from './Pages/Feedback';
 import CG from './Pages/AbstractAlgebra/CyclicGroups';
 import LagrangeInterpolation from './Pages/NumericalAnalysis/LagrangeInterpolation.jsx';
 import LUFac from './Pages/NumericalAnalysis/LUFac';
+import About from './Pages/About.jsx';
+
 
 
 const ToggleContext = React.createContext()
@@ -47,17 +49,15 @@ const pageColor = DarkMode ? "dark" : "light"
     <div> 
     <BrowserRouter >
        <Routes>
-            
-            <Route element = {<Layout/>}>
-                                   
+
+            <Route element = {<Layout/>}>               
             <Route path="/" element = {<Home />}/>
             <Route path="OV" element={<OV />}/>
             <Route  path="CRT" element={<CRT />}/>
             <Route  path="FLT" element={<FLT />}/>
             <Route  path="RSA" element={<RSA />}/>
             <Route path="ET" element={<ET />}/>
-            <Route path="LagrangeInterpolation"
-                   element={<LagrangeInterpolation />}/>
+            <Route path="LagrangeInterpolation" element={<LagrangeInterpolation />}/>
             <Route path="LUFactorising" element={<LUFac />}/>
             <Route path="EPF" element={<EPF />}/>
             <Route path="ElGamal" element={<ElGamal />}/>
@@ -65,15 +65,14 @@ const pageColor = DarkMode ? "dark" : "light"
             <Route path="MI" element={<MI />}/>
             <Route path="Groups" element={<Groups />}/>
             <Route path="CyclicGroups" element={<CG />}/>
+            <Route path="About" element={<About />}/>
            
 
-           
             <Route path="/moretasks" element = {<MoreTasksLayout />}>
             <Route index element={<MTEasy />}/>
             <Route  path="intermidiate" element={<MTIntermidiate />}/>
             <Route  path="difficult" element={<MTDifficult />}/>
-            </ Route>
-            
+            </Route>
             
             <Route path="Feedback" element={<Feedback />}/>
             </Route>

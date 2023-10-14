@@ -100,15 +100,14 @@ console.log(arrayWithFeedback)
   
     return (
     <div>
-    <h2>Average ratings from users</h2>
-    <div className="AverageFromDatabase">
-        <div className="averageOR"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingOverall.totalScore)/totalRated)*10)/10}</h2></div>
-        <div className="averageNAV"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingNavigation.totalScore)/totalRated)*10)/10}</h2></div>
-        <div className="averageMath"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingMath.totalScore)/totalRated)*10)/10}</h2></div>
-        <div className="averageTasks"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingTasks.totalScore)/totalRated)*10)/10}</h2></div>
-    </div>
-    <div className="Comments"><CommentSlide comments = {feedbackRatings.comments}/>
-    </div>
+      <h2>Average ratings from users</h2>
+      <div className="AverageFromDatabase">
+          <div className="averageOR"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingOverall.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageNAV"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingNavigation.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageMath"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingMath.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageTasks"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingTasks.totalScore)/totalRated)*10)/10}</h2></div>
+      </div>
+      <div className="Comments"><CommentSlide comments = {feedbackRatings.comments}/></div>
     </div>
 
     );

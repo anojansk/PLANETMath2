@@ -49,6 +49,7 @@ export default function Input({answer, question, explanation}){
     return(
        <div className ="InpAns_Comp">
             <input
+                className="inpField"
                 type = "text"
                 placeholder="Write answer here"
                 onChange = {handleChange}

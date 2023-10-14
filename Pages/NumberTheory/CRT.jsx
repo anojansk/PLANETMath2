@@ -2,6 +2,7 @@ import React from "react"
 import MathJaxComponent from "../../Components/MathJax"
 import TYMini from "../../Components/TestYourSelf/TestYourSelf"
 import TestYourSelf from "../../Components/TestYourSelf/TestYourSelf"
+import CRTCalcDisplay from "../../Components/Calculators&Calculatordisplay/CRTCalcDisplay"
 
 export default function CRT(){
 
@@ -107,11 +108,15 @@ export default function CRT(){
 		<div>
          <h3>In this chapter we will take a look at the Chinese Remainder Theorem.</h3>
 		<MathJaxComponent mathExpression={CRTContent} />
+
+      <CRTCalcDisplay />
+
       <TestYourSelf 
             themeInput = "CRT"
             explanation = {explanation}
        />
+
 		</div>
-	)
+	) 
 
 }
