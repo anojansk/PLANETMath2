@@ -164,12 +164,10 @@ export default function Feedback(){
         </div>
         
         <div className="column">
-            <h3>Recieved from database</h3>
-            <h4>Avarage of them all</h4>
             <FromDataBase />
             {comment} 
 
-            <h3>See all feedbacks</h3>     
+            <h3>See all feedbacks comments here!</h3>     
         </div>
     </div>
     

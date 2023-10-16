@@ -13,7 +13,7 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 
-export default function ToDataBase({ ratingOverall, ratingNavigation, ratingMath, ratingTasks, comment }) {
+export default function OveraToDataBase({ ratingOverall, ratingNavigation, ratingMath, ratingTasks, comment }) {
   const FeedbackUser = {
     overall: ratingOverall.clickedStar,
     navigation: ratingNavigation.clickedStar,

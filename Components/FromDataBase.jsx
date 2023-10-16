@@ -26,7 +26,10 @@ export default function FromDataBase() {
     ratingTasks: {
       totalScore: 0
     },
-    comments: []
+    commentsAndAverage: {
+      comment : [],
+      average : []
+    }
   });
 
 
@@ -46,8 +49,11 @@ export default function FromDataBase() {
         ratingTasks: {
             totalScore: 0
         },
-        comments: []
-        })
+        commentsAndAverage: {
+          comment : [],
+          average : []
+        }        
+      })
     }
   const [totalRated, setTotalRated] = useState(0)
 
@@ -74,15 +80,18 @@ export default function FromDataBase() {
           totalScore: (prevState.ratingTasks.totalScore + parseInt(currentFeedback.tasks))
           
         },
-        comments: [...prevState.comments, currentFeedback.comment]
+        commentsAndAverage: {
+          comment : [...prevState.commentsAndAverage.comment, currentFeedback.comment],
+          average : [...prevState.commentsAndAverage.average, Math.round(((currentFeedback.overall + currentFeedback.navigation + currentFeedback.math + currentFeedback.tasks )/4)*10)/10]
+        } 
       }));
     };
 
+   
     onValue(reviewsInDB, (snapshot) => {
       const arrayWithFeedback = Object.entries(snapshot.val());
        ClearRatings()
       
-console.log(arrayWithFeedback)
       setTotalRated(arrayWithFeedback.length)
       // Clearing the ratings should only be done if you want to reset the ratings with new data.
       // If you want to keep cumulative ratings, don't clear them here.
@@ -91,7 +100,7 @@ console.log(arrayWithFeedback)
         let currentFeedback = arrayWithFeedback[i][1]; // Access the feedback object
         updateFeedbackRatings(currentFeedback);
       }
-    });
+  });
   }, []); // Empty dependency array ensures the effect runs only once
 
 
@@ -99,15 +108,16 @@ console.log(arrayWithFeedback)
   //console.log(totalRated)
   
     return (
-    <div>
+    <div style={{marginTop : "80px"}}>
       <h2>Average ratings from users</h2>
       <div className="AverageFromDatabase">
-          <div className="averageOR"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingOverall.totalScore)/totalRated)*10)/10}</h2></div>
-          <div className="averageNAV"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingNavigation.totalScore)/totalRated)*10)/10}</h2></div>
-          <div className="averageMath"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingMath.totalScore)/totalRated)*10)/10}</h2></div>
-          <div className="averageTasks"><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingTasks.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageOR"> <h4>Overall</h4><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingOverall.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageNAV"><h4>Navigation</h4><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingNavigation.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageMath"><h4>Mathematics</h4><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingMath.totalScore)/totalRated)*10)/10}</h2></div>
+          <div className="averageTasks"><h4>Tasks</h4><IoStar color="#d1a316" size={70}/> <h2>{Math.round(((feedbackRatings.ratingTasks.totalScore)/totalRated)*10)/10}</h2></div>
       </div>
-      <div className="Comments"><CommentSlide comments = {feedbackRatings.comments}/></div>
+      <div className="Comments"><CommentSlide comments = {feedbackRatings.commentsAndAverage.comment} 
+                                              average = {feedbackRatings.commentsAndAverage.average} /></div>
     </div>
 
     );

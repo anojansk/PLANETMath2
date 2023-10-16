@@ -296,23 +296,30 @@ img {
   }
 
   .CardStack{
-
+    position: relative;
     display: flex;
-flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
   }
+
   .commentCard{
 
-   border : 1px solid brown;
-   margin: 10px 0 10px 0;
-   width: 80%;
-   height: 100px;
-   background-color: rgba(203, 139, 79, 0.437);
-   color: White;
-   justify-content: center;
+    border-top  : 1px solid brown;
+    border-bottom: 1px solid brown;
+    width: 200px;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    flex: 1 0 100%;
+    text-align: left; 
 
-    
+ 
+   }
 
-  }
+   .starComments{
+    text-align: end;
+   }
+
+
 
     /** -------------------------------------------------------
                   Dark and Light modes
