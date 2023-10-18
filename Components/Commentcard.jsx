@@ -6,7 +6,10 @@ export default function Commentcard({comments, average}){
 
     return(
         <div className="commentCard" >
-            {comments} <IoStar  color="#d1a316"/> {average} 
+            {comments} <IoStar className="starComments"  color="#d1a316"/> {average} 
         </div>
     )
 }
+
+
+

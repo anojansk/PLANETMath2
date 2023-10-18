@@ -8,30 +8,30 @@ export default function CommentSlide({comments, average}){
             <Commentcard comments = {comments[6]}/>
             <Commentcard comments = {comments[7]}/>
     */
-
-    function sortComments(comments, average){
+    //console.log(comments, average)
+    function sortComments(Comments, Average){
         //InsertionSort the array -> Change between good and bad reviews. 
-        for(let i = 1; i < average.length - 1 ; i++){
+        for(let i = 1; i < Average.length - 1 ; i++){
             
-            let key = average[i];
+            let key = Average[i];
             let j = i - 1
 
-            while (j >= 0 && average[j] > key ){
-                average[j+1] = average[j];
+            while (j >= 0 && Average[j] > key ){
+                Average[j+1] = Average[j];
                 comments[j+1] = comments[j]; //Change for comments aswell. 
                 j = j - 1;
             }
-            average[j + 1] = key
+            Average[j + 1] = key
         }
 
         return{
-            comments, average
+            Comments, Average
         }   
     }
 
     const sortedCommentsAndAverage = sortComments(comments, average)
-    const sortedComments = sortedCommentsAndAverage.comments;
-    const sortedAverage = sortedCommentsAndAverage.average;
+    const sortedComments = sortedCommentsAndAverage.Comments;
+    const sortedAverage = sortedCommentsAndAverage.Average;
 
             
        const firstFourFB =  
@@ -69,7 +69,7 @@ export default function CommentSlide({comments, average}){
 
     return (
         <div>
-            {bestFourFB}
+            {firstFourFB}
         </div>
     )
 }

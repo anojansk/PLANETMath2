@@ -13,6 +13,7 @@ const database = getDatabase(app);
 const reviewsInDB = ref(database, "FeedbackUsers");
 
 export default function FromDataBase() {
+  
   const [feedbackRatings, setFeedbackRatings] = useState({
     ratingOverall: {
       totalScore: 0
@@ -61,32 +62,27 @@ export default function FromDataBase() {
 
   useEffect(() => {
     const updateFeedbackRatings = (currentFeedback) => {
-
-      setFeedbackRatings((prevState) => ({
-        ratingOverall: {
-         // totalRated: prevState.ratingOverall.totalRated + 1,
-          totalScore: (prevState.ratingOverall.totalScore + parseInt(currentFeedback.overall))
-        },
-        ratingNavigation: {
-            //totalRated: prevState.ratingNavigation.totalRated + 1,
-            totalScore:(prevState.ratingNavigation.totalScore + parseInt(currentFeedback.navigation))
-        },
-        ratingMath: {
-         // totalRated: prevState.ratingMath.totalRated + 1,
-          totalScore:(prevState.ratingMath.totalScore + parseInt(currentFeedback.math))
-        },
-        ratingTasks: {
-         // totalRated: prevState.ratingTasks.totalRated + 1,
-          totalScore: (prevState.ratingTasks.totalScore + parseInt(currentFeedback.tasks))
-          
-        },
-        commentsAndAverage: {
-          comment : [...prevState.commentsAndAverage.comment, currentFeedback.comment],
-          average : [...prevState.commentsAndAverage.average, Math.round(((currentFeedback.overall + currentFeedback.navigation + currentFeedback.math + currentFeedback.tasks )/4)*10)/10]
-        } 
-      }));
+      setFeedbackRatings((prevState) => {
+        return {
+          ratingOverall: {
+            totalScore: prevState.ratingOverall.totalScore + parseInt(currentFeedback.overall),
+          },
+          ratingNavigation: {
+            totalScore: prevState.ratingNavigation.totalScore + parseInt(currentFeedback.navigation),
+          },
+          ratingMath: {
+            totalScore: prevState.ratingMath.totalScore + parseInt(currentFeedback.math),
+          },
+          ratingTasks: {
+            totalScore: prevState.ratingTasks.totalScore + parseInt(currentFeedback.tasks),
+          },
+          commentsAndAverage: {
+            comment: [...prevState.commentsAndAverage.comment, currentFeedback.comment],
+            average: [...prevState.commentsAndAverage.average, Math.round(((currentFeedback.overall + currentFeedback.navigation + currentFeedback.math + currentFeedback.tasks) / 4) * 10) / 10],
+          },
+        };
+      });
     };
-
    
     onValue(reviewsInDB, (snapshot) => {
       const arrayWithFeedback = Object.entries(snapshot.val());
@@ -99,13 +95,15 @@ export default function FromDataBase() {
       for (let i = 0; i < arrayWithFeedback.length; i++) {
         let currentFeedback = arrayWithFeedback[i][1]; // Access the feedback object
         updateFeedbackRatings(currentFeedback);
+        console.log(currentFeedback.comment)
       }
   });
   }, []); // Empty dependency array ensures the effect runs only once
 
 
-  //console.log(feedbackRatings.ratingOverall.totalRated)
+  //console.log(feedbackRatings.ratingOverall.totalRated  )
   //console.log(totalRated)
+
   
     return (
     <div style={{marginTop : "80px"}}>

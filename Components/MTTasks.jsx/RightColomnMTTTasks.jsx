@@ -88,16 +88,19 @@ React.useEffect(() =>{
 
 
     return(
-        <div style={{display: "inline"}}>
+        <div className="QuestionOptionsSection"style={{display: "inline"}}>
         {arrayWithQuestions.length == 0 ? <h3>No more question try another category</h3>
         :
         <>
 
-       {clickedCheckAnswer ? 
-            (chosenAnswer == taskObject.correct ?
-                <h3 style={{color:"green"}}>That is correct</h3> 
-            :   <h3 style={{color:"red"}}>That is wrong</h3> ) 
-        : <h4><MathJaxComponent mathExpression={taskObject.question} /></h4>}
+        <div className="TextAboveOptions">
+            {clickedCheckAnswer ? 
+                    (chosenAnswer == taskObject.correct ?
+                        <h3 style={{color:"green"}}>That is correct</h3> 
+                    :   <h3 style={{color:"red"}}>That is wrong</h3> ) 
+                : <h4><MathJaxComponent mathExpression={taskObject.question} /></h4>}
+        </div>
+        
        <ChooseOption 
             handleChange={handleChange}
             listOfOptions={taskObject.options}
