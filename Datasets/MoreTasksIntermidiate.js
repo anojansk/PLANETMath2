@@ -255,9 +255,9 @@ export default {
        },   {
            id: 28,
            category : `Cryptography`,
-           question : `MI`,
-          options : ["18","27","12","5"],
-          correct : "5"
+           question : `In the Matsumoto Imai cryptosystem what is $\\phi(2 + x_1 + 2x_2 + x_3 + 2x_5)$ (We work in GF(3))`,
+          options : ["(2,1,2,1,0,1)","(1,0,1,2,1,2)","(2,1,2,1,1)","(1,1,2,1,2)"],
+          correct : "(2,1,2,1,0,1)"
 
 
        },

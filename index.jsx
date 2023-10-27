@@ -23,6 +23,7 @@ import CG from './Pages/AbstractAlgebra/CyclicGroups';
 import LagrangeInterpolation from './Pages/NumericalAnalysis/LagrangeInterpolation.jsx';
 import LUFac from './Pages/NumericalAnalysis/LUFac';
 import About from './Pages/About.jsx';
+import NI from './Pages/NumericalAnalysis/NumericalIntegration';
 
 
 
@@ -66,7 +67,8 @@ const pageColor = DarkMode ? "dark" : "light"
             <Route path="Groups" element={<Groups />}/>
             <Route path="CyclicGroups" element={<CG />}/>
             <Route path="About" element={<About />}/>
-           
+            <Route path="NumericalIntegration" element={<NI />}/>
+
 
             <Route path="/moretasks" element = {<MoreTasksLayout />}>
             <Route index element={<MTEasy />}/>
