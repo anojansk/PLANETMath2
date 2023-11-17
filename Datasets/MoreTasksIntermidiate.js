@@ -128,38 +128,42 @@ export default {
         },   {
             id: 15,
             category : `Cryptography`,
-            question : `GF(7) is the field, , 
+            question : `In RSA; Let $p = 13$ and $q = 19$. Further let $e = 5$. Alice wants to 
+            send the message $m = 37$ to Bob. What will $c, d$ be? , , 
             \]`,
-           options : ["18","27","12","5"],
-           correct : "5"
+           options : ["c = 99, d = 162","c = 26, d = 78","c = 362, d = 511","c = 189, d = 173"],
+           correct : "c = 189, d = 173"
 
 
         },
         {
             id: 16,
             category : `Cryptography`,
-            question : `GF(7) is the field, , 
+            question : `In RSA; Let $p = 13$ and $q = 19$. Further let $e = 5$. Alice wants to 
+            send the message $m = 37$ to Bob. What will $c, d$ be?
             \]`,
-           options : ["18","27","12","5"],
-           correct : "5"
+           options : ["c = 99, d = 162","c = 189, d = 173","c = 362, d = 511","c = 26, d = 78"],
+           correct : "c = 189, d = 173"
 
         },   {
             id: 17,
             category : `Cryptography`,
-            question : `GF(7) is the field, , 
+            question : `In RSA; Let if you are given $n, c$ and $d$, are you able to find $m$?
             \]`,
-           options : ["18","27","12","5"],
-           correct : "5"
+           options : ["Yes, m = c^d(mod n)", "No, we need $p$ and $q$", "No, we need $e$", 
+           "No, we need $p,q$ and $e$"],
+           correct : "No, we need $p,q$ and $e$"
 
 
         },
         {
             id: 18,
             category : `Cryptography`,
-            question : `GF(7) is the field, , 
+            question : `In RSA; Let $p = 5$ and $q = 19$. Further let $e = 13$. Alice wants to 
+            send the message $m = 23$ to Bob. What will $c, d$ be?
             \]`,
-           options : ["18","27","12","5"],
-           correct : "5"
+           options : ["c = 28, d = 61","c = 48, d = 90","c = 12, d = 57","c = 49, d = 61"],
+           correct :"c = 28, d = 61"
 
         },   {
             id: 19,

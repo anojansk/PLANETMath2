@@ -67,22 +67,76 @@ p_1(x) = L_0(x)f(a) + L_1(x)f(b) \\\\
 
 Now that we know $p_1(x)$ we need to integrate it. This is the last step. 
 \[
-     \\int_{a}^{b} p_1(x) \\ dx  = \\int_{a}^{b} \\frac{1}{b-a}( (b-x)f(a) + (x-a)f(b) ) \\ dx\\\\
-     =
+    \\int_{a}^{b} f(x) \\ dx  ≈     \\int_{a}^{b} p_1(x) \\ dx  = \\frac{b-a}{2} (f(a) + f(b))
+
+]\
+
+Further, we will take a look at Simpsons Rule: $\\\\$
+In this case $ n = 2 $. Where $x_0 = a$, $x_1 = (a+b)/2$ and $x_2 = b$. 
+Simpsons rule therefore states: 
+    \[
+
+        \\int_{a}^{b} f(x) \\ dx  ≈   \\int_{a}^{b} p_2(x) \\ dx  =  \\frac{b-a}{6} (f(a) + 4f(\\frac{a+b}{2}) + f(b))
+
+
+    ]\
+
+Example with Trapezoid Rule:
+Lets look at an interval $x \\in [0,1] $ meaning $x_0 = 0$ and $x_1 = 1$ and we want to integrate the function
+$f(x) = x^2 + 3x + 1$ $\\\\$
+By using the Trapeziodal Rule we get: 
+
+\[
+
+    \\int_{0}^{1} x^2 \\ dx  ≈  \\int_{0}^{1} p_1(x) \\ dx  =  \\frac{1-0}{2} (f(0) + f(1)) \\\\
+    = \\frac{1}{2}(1 + 5) = 3
+
 
 ]\
 
 
+Example with Simpsons Rule: 
+Lets look at an interval $x \\in [0,1] $ meaning $x_0 = 0$, $x_1 = 0.5$ and $x_2 = 1$  and we want to integrate the function.
+$f(x) = \\frac{x^3}{3} - 2x^2 + 5x + 4$ $\\\\$
+By using the Trapeziodal Rule we get: 
 
+\[
+
+    \\int_{0}^{1} p_2(x) \\ dx  =  \\frac{1-0}{6} (f(0) + 4f(\\frac{0 + 1}{2}) + f(1)) \\\\
+    = \\frac{1}{6}(4 + 4\\cdot \\frac{49}{8} + 10) = 6.417 \\\\ 
+    \\int_{0}^{1}  3x^3 - 2x^2 + 5x + 4 \\ dx = \\frac{79}{12} = 6.583
+]\
 
 
 `
+
+
+
+const NIContent2 = `
+Our goal by using Newton-Cotes formula is to minimise the error from
+the estimated integration and the actual integration.
+
+To find the error we simply substract the value of the estimated integration
+from the value of the actual integration. $\\\\$
+
+In our example above, the error would be: 
+
+\[
+
+    E = \\lvert \\int_{0}^{1} f(x) \\ dx    - \\int_{0}^{1} p_2(x) \\ dx \\rvert \\\\
+    = \\lvert 6.583-6.417 \\rvert = 0.166
+
+]\
+`
+
 
 
     return(
         <div>
         <h3>In this section we will take a look at Numerical Integrations.</h3>
         <MathJaxComponent mathExpression={NIContent}/>
+        <h3>Error estimates</h3>
+        <MathJaxComponent mathExpression={NIContent2}/>
        <TestYourSelf themeInput={"NI"}/>
         </div>
     )

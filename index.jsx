@@ -24,7 +24,8 @@ import LagrangeInterpolation from './Pages/NumericalAnalysis/LagrangeInterpolati
 import LUFac from './Pages/NumericalAnalysis/LUFac';
 import About from './Pages/About.jsx';
 import NI from './Pages/NumericalAnalysis/NumericalIntegration';
-
+import Lhopital from './Pages/Calculus/Lhopital';
+import Integration from './Pages/Calculus/Integration';
 
 
 const ToggleContext = React.createContext()
@@ -68,6 +69,9 @@ const pageColor = DarkMode ? "dark" : "light"
             <Route path="CyclicGroups" element={<CG />}/>
             <Route path="About" element={<About />}/>
             <Route path="NumericalIntegration" element={<NI />}/>
+            <Route path="LHopital" element={<Lhopital />}/>
+            <Route path="Integration" element={<Integration />}/>
+
 
 
             <Route path="/moretasks" element = {<MoreTasksLayout />}>

@@ -198,7 +198,61 @@ export default {
             hint : `its 1 +  1`,
             answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
 
-        }
+        },
+        {
+            id: 25,
+            theme : `Lhopital`,
+            question : `6`,
+            hint : `its 1 +  1`,
+            answer : `2 test`
 
+        },   
+         {
+            id: 26,
+            theme : `Lhopital`,
+            question : `what is 1+1`,
+            hint : `its 1 +  1`,
+            answer : `2`
+
+        },
+        {
+            id: 27,
+            theme : `Lhopital`,
+            question : `what is 2+2`,
+            hint : `its 2 +  2`,
+            answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
+        },
+
+        {    id: 28,
+            theme : `Lhopital`,
+            question : `what is 3+3`,
+            hint : `its 3 +  3`,
+            answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
+
+        },
+
+        {    id: 29,
+            theme : `Lhopital`,
+            question : `what is 4+4`,
+            hint : `its 4 +  4`,
+            answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
+
+        },
+        {
+            id: 30,
+            theme : `Lhopital`,
+            question : `5`,
+            hint : `its 1 +  1`,
+            answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
+
+        },
+        {
+            id: 31,
+            theme : `Lhopital`,
+            question : `6`,
+            hint : `its 1 +  1`,
+            answer : `DETTE ER SVARET SLIK AT DU KAN SE HVORDAN BOKSEN SER UT`
+
+        }
     ]
 }

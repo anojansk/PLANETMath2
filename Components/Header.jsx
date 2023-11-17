@@ -23,10 +23,10 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
                                 {Path : "ET", Name : "Eulers Theorem"},
                                 {Path : "EPF", Name : "Eulers Phi-Function"}]
 
-    const StatisitcsItems =  [{Path : "RSA", Name : "DUMMY1"}, 
-                            { Path : "OV", Name : "DUMMY2"}  , 
-                            {Path : "MI", Name : "DUMMY3"}, 
-                            {Path : "DH", Name : "DUMMY4"}]
+    const CalculusItems =  [{Path : "Integration", Name : "Integration"}, 
+                            { Path : "OV", Name : "Limits"}  , 
+                            {Path : "Lhopital", Name : "L'hopital"}, 
+                            {Path : "DH", Name : "Theme 4"}]
     
     const NumericalAnalysisItems = [{Path : "LagrangeInterpolation", Name : "Lagrange Interpolation"},
                                     {Path : "LUFactorising", Name : "LU Factorization"},
@@ -59,8 +59,8 @@ const {pageColor, handleClick, DarkMode} = React.useContext(ToggleContext)
            listLinkNames={NumberTheoryItems}
            />
            <NavComponentTDD
-           topicName="Statistics"
-           listLinkNames={StatisitcsItems}
+           topicName="Calculus"
+           listLinkNames={CalculusItems}
            />
            <Link to="/moretasks" style={{marginLeft: "10px", textDecoration:"none", color: "brown"}}>More Tasks</Link>
         </MenuNavBar>

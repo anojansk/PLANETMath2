@@ -100,6 +100,12 @@ We can now calculate $p_2(x)$ for the function $3e^{2x}$ over the interval $[-2,
     = 19.73x^2 + 40.93x + 3 \\ \\ ^{(1)}
 \]
 
+
+Vannet, et menneske i live beholder, 
+Vannet, H og O sammenkobler. 
+Følelser som en stein har, vannet
+vi mennesker aldri fordrar. 
+
 `
 
     return(
